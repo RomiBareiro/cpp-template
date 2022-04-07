@@ -11,6 +11,14 @@ cc_binary(
     srcs = ["main_fib.cc"],
     deps = ["//src/lib:CPPLib"],
 )
+cc_binary(
+    name = "main_connect_snowflake",
+    srcs = ["main_connect_snowflake.cc"],
+    deps = ["//src/lib:CPPLib",
+            "@com_github_gflags_gflags//:gflags",
+            "@glog",],
+    linkopts = ["-lodbc"]
+)
 
 cc_binary(
     name = "main_logger",
